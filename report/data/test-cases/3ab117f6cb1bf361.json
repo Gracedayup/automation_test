@@ -1,0 +1,63 @@
+{
+  "uid" : "3ab117f6cb1bf361",
+  "name" : "test_login[caseinfo0]",
+  "fullName" : "test_case.login_test.test_login.TestLogin#test_login",
+  "historyId" : "5fc111f5ff440ceae3fa5b531665c042",
+  "time" : {
+    "start" : 1655165001038,
+    "stop" : 1655165001038,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "statusMessage" : "KeyError: 'case_no'",
+  "statusTrace" : "self = <test_case.login_test.test_login.TestLogin object at 0x0000025365596610>\ncaseinfo = {'{': '\\t\"username\": \"admin\"'}\n\n    @pytest.mark.parametrize(\"caseinfo\", HandleFileData(\"test_data\\login_test_data.json\").read_csv())\n    def test_login(self, caseinfo):\n>       logger.info(\"开始执行用例,case_no:{0},case_name:{1}\".format(caseinfo['case_no'], caseinfo['case_name']))\nE       KeyError: 'case_no'\n\ntest_case\\login_test\\test_login.py:11: KeyError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test_case.login_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_login"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLogin"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-8LS2KV9"
+  }, {
+    "name" : "thread",
+    "value" : "23880-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.login_test.test_login"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "caseinfo",
+    "value" : "{'{': '\\t\"username\": \"admin\"'}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "3ab117f6cb1bf361.json",
+  "parameterValues" : [ "{'{': '\\t\"username\": \"admin\"'}" ]
+}

@@ -1,0 +1,100 @@
+{
+  "6d4743ed696c50031d4963b39541fcee" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7df8e094fd59b012",
+      "status" : "broken",
+      "statusDetails" : "KeyError: 'case_no'",
+      "time" : {
+        "start" : 1655165092297,
+        "stop" : 1655165092297,
+        "duration" : 0
+      }
+    } ]
+  },
+  "8b0fc3b0116d0fd763632724979b9dd4" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "56b13d52d03e3e94",
+      "status" : "broken",
+      "statusDetails" : "KeyError: 'case_no'",
+      "time" : {
+        "start" : 1655165092285,
+        "stop" : 1655165092285,
+        "duration" : 0
+      }
+    } ]
+  },
+  "5fc111f5ff440ceae3fa5b531665c042" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "81572662701a5f0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1655167754774,
+        "stop" : 1655167755160,
+        "duration" : 386
+      }
+    } ]
+  },
+  "e8cb14c80ac14a00ae3df694a7950fab" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "efd3323d4e65146f",
+      "status" : "broken",
+      "statusDetails" : "KeyError: 'case_no'",
+      "time" : {
+        "start" : 1655165092277,
+        "stop" : 1655165092277,
+        "duration" : 0
+      }
+    } ]
+  },
+  "1ffb8c40eeaf8c6a235fe9e259078ac2" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "250c4cd4d55c5f07",
+      "status" : "passed",
+      "time" : {
+        "start" : 1655167755176,
+        "stop" : 1655167755375,
+        "duration" : 199
+      }
+    } ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "uid" : "fe0031f8ffb04c37",
+  "name" : "test_login[caseinfo1]",
+  "fullName" : "test_case.login_test.test_login.TestLogin#test_login",
+  "historyId" : "1ffb8c40eeaf8c6a235fe9e259078ac2",
+  "time" : {
+    "start" : 1655167102744,
+    "stop" : 1655167102946,
+    "duration" : 202
+  },
+  "status" : "broken",
+  "statusMessage" : "json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+  "statusTrace" : "self = <test_case.login_test.test_login.TestLogin object at 0x00000256366464F0>\ncaseinfo = {'assert': \"[{'equals': {'status_code': 200}}, {'contains': '参数格式错误!'}]\", 'case_name': '错误的用户名密码登录', 'case_no': 'login...'captchaCode': 5490, 'password': 'admin123456', 'username': 'admin', 'uuid': '06a5053ec4874523bb47a6f7adcaa8f6'}\", ...}\n\n    @pytest.mark.parametrize(\"caseinfo\", HandleFileData(\"test_data\\\\login_test_data.csv\").read_csv())\n    def test_login(self, caseinfo):\n        url = base_url + str(caseinfo['request_url'])\n        logger.info(f'>>>>>>>>>>>>>正在进行第【{caseinfo[\"case_no\"]}】条测试用例<<<<<<<<<<<<<<<')\n        logger.info(f'测试标题为>>>>>>>>>>>>>>>>：{caseinfo[\"case_name\"]}')\n        logger.info(f'请求方法为>>>>>>>>>>>>>>>>：{caseinfo[\"request_method\"]}')\n        logger.info(f'接口地址为>>>>>>>>>>>>>>>>：{url}')\n        logger.info(f'测试参数为>>>>>>>>>>>>>>>>：{caseinfo[\"request_method\"]}')\n        res = requests.post(data=caseinfo[\"data\"], url=url)\n>       logger.info(f'返回结果>>>>>>>>>>>>>>>>：{res.json()}')\n\ntest_case\\login_test\\test_login.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\csq\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\requests\\models.py:898: in json\n    return complexjson.loads(self.text, **kwargs)\nC:\\Users\\csq\\AppData\\Local\\Programs\\Python\\Python38\\lib\\json\\__init__.py:357: in loads\n    return _default_decoder.decode(s)\nC:\\Users\\csq\\AppData\\Local\\Programs\\Python\\Python38\\lib\\json\\decoder.py:337: in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <json.decoder.JSONDecoder object at 0x0000025634F0AD60>\ns = '<!doctype html><html lang=\"en\"><head><title>HTTP Status 404 – Not Found</title><style type=\"text/css\">body {font-fami...ight:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 404 – Not Found</h1></body></html>'\nidx = 0\n\n    def raw_decode(self, s, idx=0):\n        \"\"\"Decode a JSON document from ``s`` (a ``str`` beginning with\n        a JSON document) and return a 2-tuple of the Python\n        representation and the index in ``s`` where the document ended.\n    \n        This can be used to decode a JSON document from a string that may\n        have extraneous data at the end.\n    \n        \"\"\"\n        try:\n            obj, end = self.scan_once(s, idx)\n        except StopIteration as err:\n>           raise JSONDecodeError(\"Expecting value\", s, err.value) from None\nE           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n\nC:\\Users\\csq\\AppData\\Local\\Programs\\Python\\Python38\\lib\\json\\decoder.py:355: JSONDecodeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+    "statusTrace" : "self = <test_case.login_test.test_login.TestLogin object at 0x00000256366464F0>\ncaseinfo = {'assert': \"[{'equals': {'status_code': 200}}, {'contains': '参数格式错误!'}]\", 'case_name': '错误的用户名密码登录', 'case_no': 'login...'captchaCode': 5490, 'password': 'admin123456', 'username': 'admin', 'uuid': '06a5053ec4874523bb47a6f7adcaa8f6'}\", ...}\n\n    @pytest.mark.parametrize(\"caseinfo\", HandleFileData(\"test_data\\\\login_test_data.csv\").read_csv())\n    def test_login(self, caseinfo):\n        url = base_url + str(caseinfo['request_url'])\n        logger.info(f'>>>>>>>>>>>>>正在进行第【{caseinfo[\"case_no\"]}】条测试用例<<<<<<<<<<<<<<<')\n        logger.info(f'测试标题为>>>>>>>>>>>>>>>>：{caseinfo[\"case_name\"]}')\n        logger.info(f'请求方法为>>>>>>>>>>>>>>>>：{caseinfo[\"request_method\"]}')\n        logger.info(f'接口地址为>>>>>>>>>>>>>>>>：{url}')\n        logger.info(f'测试参数为>>>>>>>>>>>>>>>>：{caseinfo[\"request_method\"]}')\n        res = requests.post(data=caseinfo[\"data\"], url=url)\n>       logger.info(f'返回结果>>>>>>>>>>>>>>>>：{res.json()}')\n\ntest_case\\login_test\\test_login.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nC:\\Users\\csq\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\requests\\models.py:898: in json\n    return complexjson.loads(self.text, **kwargs)\nC:\\Users\\csq\\AppData\\Local\\Programs\\Python\\Python38\\lib\\json\\__init__.py:357: in loads\n    return _default_decoder.decode(s)\nC:\\Users\\csq\\AppData\\Local\\Programs\\Python\\Python38\\lib\\json\\decoder.py:337: in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <json.decoder.JSONDecoder object at 0x0000025634F0AD60>\ns = '<!doctype html><html lang=\"en\"><head><title>HTTP Status 404 – Not Found</title><style type=\"text/css\">body {font-fami...ight:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 404 – Not Found</h1></body></html>'\nidx = 0\n\n    def raw_decode(self, s, idx=0):\n        \"\"\"Decode a JSON document from ``s`` (a ``str`` beginning with\n        a JSON document) and return a 2-tuple of the Python\n        representation and the index in ``s`` where the document ended.\n    \n        This can be used to decode a JSON document from a string that may\n        have extraneous data at the end.\n    \n        \"\"\"\n        try:\n            obj, end = self.scan_once(s, idx)\n        except StopIteration as err:\n>           raise JSONDecodeError(\"Expecting value\", s, err.value) from None\nE           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\n\nC:\\Users\\csq\\AppData\\Local\\Programs\\Python\\Python38\\lib\\json\\decoder.py:355: JSONDecodeError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "8b586bee4707d5ae",
+      "name" : "log",
+      "source" : "8b586bee4707d5ae.txt",
+      "type" : "text/plain",
+      "size" : 440
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test_case.login_test"
+  }, {
+    "name" : "suite",
+    "value" : "test_login"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLogin"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-8LS2KV9"
+  }, {
+    "name" : "thread",
+    "value" : "31648-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.login_test.test_login"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "caseinfo",
+    "value" : "{'case_no': 'login002', 'case_name': '错误的用户名密码登录', 'request_url': '/login', 'request_method': 'post', 'data_type': 'json', 'data': \"{'captchaCode': 5490, 'password': 'admin123456', 'username': 'admin', 'uuid': '06a5053ec4874523bb47a6f7adcaa8f6'}\", 'assert': \"[{'equals': {'status_code': 200}}, {'contains': '参数格式错误!'}]\"}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "fe0031f8ffb04c37.json",
+  "parameterValues" : [ "{'case_no': 'login002', 'case_name': '错误的用户名密码登录', 'request_url': '/login', 'request_method': 'post', 'data_type': 'json', 'data': \"{'captchaCode': 5490, 'password': 'admin123456', 'username': 'admin', 'uuid': '06a5053ec4874523bb47a6f7adcaa8f6'}\", 'assert': \"[{'equals': {'status_code': 200}}, {'contains': '参数格式错误!'}]\"}" ]
+}

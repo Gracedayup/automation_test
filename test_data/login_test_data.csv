@@ -1,0 +1,13 @@
+case_no,case_name,request_url,request_method,data_type,data,assert
+login001,正确用户名密码登录,/login,post,json,"{
+ ""username"": ""admin"",
+ ""password"": ""admin123456"",
+ ""captchaCode"": ""3228"",
+ ""uuid"": ""425c3a4b96464aecb0e7dd41521df601""
+}","[{'equals': {'status_code': 200}}, {'contains': '参数格式错误!'}]"
+login002,错误的用户名密码登录,/login,post,json,"{
+ ""username"": ""admin"",
+ ""password"": ""admin12345"",
+ ""captchaCode"": ""3228"",
+ ""uuid"": ""425c3a4b96464aecb0e7dd41521df601""
+}","[{'equals': {'status_code': 200}}, {'contains': '参数格式错误!'}]"
