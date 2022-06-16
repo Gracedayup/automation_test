@@ -1,4 +1,0 @@
-logger:
-  level: DEBUG
-server:
-  base_url: "http://10.1.1.41:8080/jugo-account-api"
