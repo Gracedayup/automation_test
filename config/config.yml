@@ -1,4 +1,9 @@
 logger:
   level: DEBUG
 server:
-  base_url: "http://10.1.1.41:8080/jugo-account-api"
+  account_base_url: "http://10.1.1.41:8080/jugo-account-api"
+  flow_base_url: "http://10.1.1.40:8234/jugoflow"
+  login_url: "/user/login"
+account:
+  flow_username: admin
+  flow_password: admin123456
