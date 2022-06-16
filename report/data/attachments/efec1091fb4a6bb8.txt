@@ -1,6 +1,0 @@
-INFO     log:test_login.py:17 >>>>>>>>>>>>>正在进行第【login001】条测试用例<<<<<<<<<<<<<<<
-INFO     log:test_login.py:18 测试标题为>>>>>>>>>>>>>>>>：正确用户名密码登录
-INFO     log:test_login.py:19 请求方法为>>>>>>>>>>>>>>>>：post
-INFO     log:test_login.py:20 接口地址为>>>>>>>>>>>>>>>>：http://10.1.1.41:8080/jugo-account-api/login
-INFO     log:test_login.py:21 测试参数为>>>>>>>>>>>>>>>>：{'captchaCode': 5490, 'password': 'admin123456', 'username': 'admin', 'uuid': '06a5053ec4874523bb47a6f7adcaa8f6'}
-INFO     log:test_login.py:23 返回结果>>>>>>>>>>>>>>>>：{"code":20003,"msg":"参数格式错误!"}

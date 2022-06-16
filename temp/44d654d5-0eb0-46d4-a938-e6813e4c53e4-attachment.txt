@@ -1,5 +1,0 @@
-INFO     log:test_login.py:15 >>>>>>>>>>>>>正在进行第【login001】条测试用例<<<<<<<<<<<<<<<
-INFO     log:test_login.py:16 测试标题为>>>>>>>>>>>>>>>>：正确用户名密码登录
-INFO     log:test_login.py:17 请求方法为>>>>>>>>>>>>>>>>：post
-INFO     log:test_login.py:18 接口地址为>>>>>>>>>>>>>>>>：http://10.1.1.41:8080/jugo-account/login
-INFO     log:test_login.py:19 测试参数为>>>>>>>>>>>>>>>>：post
