@@ -30,9 +30,10 @@ class GetToken(object):
 
         :return:登录接口返回的结果
         """
-        login = GetToken()
-        login.recognize_text()
-        res = login.login_flow()
+        image_base64, self.verify_code_key = self.get_verify_code()
+        image = self.b64_convert_image(image_base64)
+        self.recognize_text()
+        res = self.login_flow()
         return res
 
     def login_flow(self):
@@ -51,14 +52,11 @@ class GetToken(object):
         res = self.request.handle_request(url=login_url, method="post", data=json.dumps(data), headers=self.headers)
         return res
 
-    def recognize_text(self):
+    def recognize_text(self, image):
         """
         识别验证码图片中的字符
         :return:None
         """
-        login = GetToken()
-        image_base64, self.verify_code_key = login.get_verify_code()
-        image = login.b64_convert_image(image_base64)
         self.text = ImageConvertText().image_convert_text3(image)
 
     def get_verify_code(self):
