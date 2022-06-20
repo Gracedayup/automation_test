@@ -1,18 +1,22 @@
-"""
-@Time : 2022/6/16 11:59
-@Author : sunny cao
-@File : image_convert_text.py
-"""
+
 import cv2 as cv
 import ddddocr
-from PIL import Image,ImageEnhance
+from PIL import Image, ImageEnhance
 import pytesseract
 from pytesseract import image_to_string
 
 
 class ImageConvertText(object):
+    """
+    三种识别图片文字方式，image_convert_text3方法准确度最高，推荐使用
+    """
 
     def image_convert_text(self, image):
+        """
+
+        :param image: 图片地址
+        :return: text 图片中的文本
+        """
         text = ""
         # 边缘保留滤波，去噪
         dst = cv.pyrMeanShiftFiltering(image, sp=10, sr=150)
@@ -35,6 +39,11 @@ class ImageConvertText(object):
         return text
 
     def image_convert_text2(self, image):
+        """
+
+        :param image: 图片地址
+        :return: text 图片中的文本
+        """
         text = ""
         im = Image.open(image)
         im = im.convert("L")
@@ -45,6 +54,11 @@ class ImageConvertText(object):
         return text
 
     def image_convert_text3(self, image):
+        """
+
+        :param image: 图片地址
+        :return: text 图片中的文本
+        """
         text = ""
         ocr = ddddocr.DdddOcr()
         with open(image, "rb") as f:

@@ -1,5 +1,6 @@
-from common import project_path
+# – coding: utf-8 --
 
+from common import project_path
 import csv
 import os
 import yaml
@@ -7,12 +8,10 @@ import configparser
 import json
 
 
-
 class HandleFileData(object):
 
     def __init__(self, file_path):
         self.file_path = os.path.join(project_path.project_path, file_path)
-
 
     def read_csv(self):
         """
@@ -58,8 +57,7 @@ class HandleFileData(object):
 
 
 if __name__ == '__main__':
-    filedata = HandleFileData("test_data\login_test_data.json")
-    result = filedata.read_json()
+    result = HandleFileData(r"test_data\login_test_data.csv").read_csv()
     print(result)
 
 
