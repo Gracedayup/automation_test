@@ -26,13 +26,15 @@ class HandleRequest(object):
                 if expect["check"] == "status_code":
                     if status_code != expect["expect"]:
                         flag = flag + 1
-                        logger.info("断言失败：{0} not {1}{2}".format(status_code, expect["assert"], expect["expect"]))
-
+                        logger.error("断言失败：{0}: not {1} {2}".format(expect["check"], expect["assert"], expect["expect"]))
                 else:
                     if actual_result[expect["check"]] != expect["expect"]:
                         flag = flag + 1
-                        logger.info("断言失败：{0} not {1}{2}".format(actual_result[expect["check"]], expect["assert"], expect["expect"]))
+                        logger.error("断言失败：{0}: not {1} {2}".format(expect["check"], expect["assert"], expect["expect"]))
+        if flag == 0:
+            logger.info("断言成功")
+        else:
+            raise Exception("断言失败")
 
-        assert flag == 0
 
 
