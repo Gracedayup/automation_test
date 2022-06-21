@@ -37,19 +37,37 @@ class OperationMysql(object):
             des.append(i[0])
         return des
 
-    def query_data(self, sql, param=None):
+    def query_data(self, sql, param=None, size=None):
         """
 
-        :param sql:查询语句
-        :return:
+        :param sql:sql语句
+        :param param:查询条件
+        :param size:数据条数
+        :return: 查询结果
         """
-
-        self.cursor.execute(query=sql, args=param)
-        result = self.cursor.fetchall()
-        des = self.get_description()
         result_list = []
-        for value in result:
+        self.cursor.execute(query=sql, args=param)
+        if size:
+            result_data = self.cursor.fetchmany(size)
+        else:
+            result_data = self.cursor.fetchall()
+        des = self.get_description()
+
+        for value in result_data:
             result_list.append(dict(zip(des, value)))
+        return result_list
+
+    def query_one(self, sql, param=None):
+        """
+
+        :param sql:sql语句
+        :param param:查询条件
+        :return:查询结果
+        """
+        self.cursor.execute(query=sql, args=param)
+        result_data = self.cursor.fetchone()
+        des = self.get_description()
+        result_list = dict(zip(des, result_data))
         return result_list
 
     def close_db(self):
@@ -59,9 +77,9 @@ class OperationMysql(object):
 
 if __name__ == '__main__':
     query_project = OperationMysql(host="10.1.1.40", user="root", password="jzy123456", database="db_jugo_flow")
-    sql = "SELECT user_id,user_name from t_user where user_name=%s and status=%s"
-    param = ["admin", 1]
+    sql = "SELECT user_id,user_name from t_user where status=%s"
+    param = [1]
     # sql = "SELECT user_id,user_name from t_user"
-    result = query_project.query_data(sql, param)
+    result = query_project.query_data(sql, param, 1)
     print("最终的查询数据", result)
 

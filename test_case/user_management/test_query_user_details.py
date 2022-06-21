@@ -33,7 +33,6 @@ class TestQueryUserDetails(object):
     @allure.description("登录状态，输入不存在的address")
     def test_query_user_details_address_not_exit(self, get_token, get_base_info):
         base_url, request = get_base_info
-        address = eval(get_token["data"]["walletJson"])["address"]
         url = base_url + "/user/queryUserDetails"
         access_token = get_token["data"]["token"]
         headers = {'Content-Type': 'application/json', 'Access-Token': access_token}
