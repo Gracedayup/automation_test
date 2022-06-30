@@ -15,6 +15,7 @@ class TestQueryUserDetails(object):
 
     @allure.title("未登录状态，查询用户详情")
     @allure.description("未登录状态，查询用户详情")
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_query_user_details_without_login(self, get_token, get_base_info):
         base_url, request = get_base_info
         address = eval(get_token["data"]["walletJson"])["address"]

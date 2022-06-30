@@ -6,17 +6,18 @@ from base.get_token import GetToken
 from db.operation_mysql import OperationMysql
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session", autouse=False)
 def get_token():
     result = GetToken().get_token().json()
     return result
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session", autouse=False)
 def get_base_info():
     base_url = HandleFileData(r"config\config.yml").read_yaml()['server']['flow_base_url']
     request = HandleRequest()
     return base_url, request
+
 
 @pytest.fixture(scope="session", autouse=False)
 def handle_mysql():

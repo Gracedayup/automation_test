@@ -3,6 +3,8 @@
 from common.handle_log import logger
 import requests
 import json
+import jsonpath
+from common.handle_data import HandleFileData
 
 
 class HandleRequest(object):
@@ -35,6 +37,20 @@ class HandleRequest(object):
             logger.info("断言成功")
         else:
             raise Exception("断言失败")
+
+
+if __name__ == '__main__':
+    base_url = HandleFileData(r"config\config.yml").read_yaml()['server']['flow_base_url']
+    request = HandleRequest()
+    respect = {'status': '10000', 'size': 10, 'msg': '成功'}
+    url = base_url + "/org/listOrgInfoByTotalData"
+    res = request.handle_request(url=url, method="get")
+    HandleRequest().handle_assert(res, respect)
+
+
+
+
+
 
 
 

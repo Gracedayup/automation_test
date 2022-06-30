@@ -77,9 +77,8 @@ class OperationMysql(object):
 
 if __name__ == '__main__':
     query_project = OperationMysql(host="10.1.1.40", user="root", password="jzy123456", database="db_jugo_flow")
-    sql = "SELECT user_id,user_name from t_user where status=%s"
-    param = [1]
-    # sql = "SELECT user_id,user_name from t_user"
-    result = query_project.query_data(sql, param, 1)
+    query_sql = "SELECT * FROM t_project_member WHERE `status`=1 and user_id!=%s"
+    param = ["1"]
+    result = query_project.query_one(sql=query_sql, param=param)
     print("最终的查询数据", result)
 

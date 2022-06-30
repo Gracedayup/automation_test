@@ -16,6 +16,7 @@ class TestQueryNickname(object):
 
     @allure.title("未登录状态，查询所有用户昵称")
     @allure.description("未登录状态，查询所有用户昵称")
+    @allure.severity(allure.severity_level.MINOR)
     def test_query_nickname_without_login(self, get_token, get_base_info):
         base_url, request = get_base_info
         url = base_url + "/user/queryAllUserNickname"
