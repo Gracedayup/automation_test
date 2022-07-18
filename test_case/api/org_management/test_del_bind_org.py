@@ -122,10 +122,3 @@ class TestDelBindOrg(object):
             logger.info("接口响应结果：{}".format(res.json()))
             assert res.json()["code"] == 10000
             assert res.json()["msg"] == "成功"
-            # 如果接口调用成功，则查询数据库数据，看是否还存在
-            if res.json()["code"] == 10000:
-                search_org_sql = "SELECT * from mo_org_user WHERE identity_id=%s"
-                print("identity_id:", usr_bind_org_data["identity_id"])
-                sql_param = usr_bind_org_data["identity_id"]
-                search_result = handle_mysql.query_data(sql=get_org_sql, param=sql_param)
-                assert search_result == None

@@ -69,7 +69,7 @@ class TestAddOrg(object):
         access_token = get_token["data"]["token"]
         url = base_url + "/org/addIpPortBind"
         param = {
-            "identityIp": "10.1.1.46",
+            "identityIp": "10.10.8.175",
             "identityPort": 10033
         }
         headers = {'Content-Type': 'application/json', 'Access-Token': access_token}

@@ -18,7 +18,7 @@ header = {'Content-Type': 'application/json'}
 class TestUserManagement(object):
 
     @allure.story("用户登录")
-    @pytest.mark.parametrize("caseinfo", HandleFileData(r"test_data\user_management\login_test_data.csv").read_csv())
+    @pytest.mark.parametrize("caseinfo", HandleFileData(r"test_data\api\user_management\login_test_data.csv").read_csv())
     def test_login_flow(self, caseinfo, get_base_info):
         allure.dynamic.title(caseinfo["case_no"] + caseinfo["case_name"])
         allure.dynamic.description(caseinfo["case_name"])

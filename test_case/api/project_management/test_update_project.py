@@ -49,6 +49,7 @@ class TestUpdateProject(object):
         # 查询当前登录用户拥有管理员权限的项目id
         _, project_ids = project_management.query_user_project(1)
         project_name = "test" + str(int(time.time()))
+        print(f"当前登录用户拥有的管理员权限的项目id为：{project_ids[0]}")
         param = {
             "id": project_ids[0],
             "projectDesc": "",
