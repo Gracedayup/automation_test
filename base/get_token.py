@@ -91,7 +91,7 @@ class GetToken(object):
             os.mkdir(verifycode_file)
         with open(file=image_url, mode="wb") as f:
             f.write(base64.b64decode(image_base64))
-        self.text = ImageConvertText().image_convert_text3(image_url)
+        self.text = ImageConvertText().image_convert_text(image_url)
         return self.text
 
 

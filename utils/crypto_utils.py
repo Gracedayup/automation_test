@@ -10,7 +10,6 @@ from base.get_token import GetToken
 from common.handle_requests import HandleRequest
 from common.handle_data import HandleFileData
 from eth_account import Account
-import web3
 
 
 class CryptoUtils(object):
